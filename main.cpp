@@ -1,5 +1,6 @@
 #include <iostream>
 #include "date.h"
+<<<<<<< HEAD
 #include "livre.h"
 #include "emprun.h"
 
@@ -14,7 +15,14 @@ int main() {
     //std::cout << L1.title() << L1.author() << L1.author() << D1.day() << "/" << D1.month() << "/" << D1.year() << std::endl;
     Emprun E1("1", (1,1,2022), "1", "1");
     std::cout << E1.id() << E1.date().day() << "/" << E1.date().month() << "/" << E1.date().year() << E1.idLivre() << E1.idAdherent() << std::endl;
+=======
+#include "lecteur.h"
+
+int main() {
+ 
+>>>>>>> a02f3f4fbddfc4c52fa8537cea38013fd4b7a8ec
     return 0;
 }
 //(std::string title, std::string author, Date date, std::string editeur, std::string langue, std::string genre, std::string ISBN)
+
 
