@@ -2,7 +2,7 @@
 #include<iostream>
 #include<vector>
 
-Livre::Livre(std::string title, std::string author, Date date, std::string editeur, std::string langue, std::string genre, std::string ISBN) :
+Livre::Livre(std::string title, std::string author, Date date, std::string editeur, std::string langue, std::string genre, long int ISBN) :
 _titre(title), _auteur(author), _editeur(editeur), _langue(langue), _genre(genre), _ISBN(ISBN) {
     std::cout << "Livre crée" << std::endl;
 }
@@ -29,5 +29,9 @@ void Livre::updateAuthor(std::string author) {
 
 void Livre::updateDate(Date date) {
     _dateDePublication = date;
+}
+
+long int Livre::isbn() const {
+    return _ISBN;
 }
 
