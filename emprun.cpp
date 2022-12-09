@@ -22,7 +22,7 @@ Date Emprun::dateEmprun() const {
 
 Date Emprun::dateRetour() const {
     std::cout << "A rendre avant le " << _dateEmprun.day();
-    if (_dateEmprun.month() ==12) {
+    if (_dateEmprun.month() == 12) {
         std::cout << "/" << 1 << "/" << _dateEmprun.year()+1 ;
     }
     else {

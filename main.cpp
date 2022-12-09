@@ -20,17 +20,17 @@ int main() {
     std::cout << ", ID livre : " << E1.idLivre() << ", ID adherent : "<< E1.idAdherent() << std::endl;
     E1.dateRetour();
 
-       std::vector<long int> v = {15526, 52595, 55655}; 
-   Lecteur lecteur("59", "colin", "liaud", v);
-   lecteur.ajouteListeISBN(55555);
-   lecteur.removeListeISBN(52595);
-   lecteur.displayId();
-   lecteur.displayNom();
-   lecteur.displayPrenom();
-   lecteur.displayListeISBN(0);
-   lecteur.displayListeISBN(1);
-   lecteur.displayListeISBN(2);
-   return 0;
+    std::vector<long int> v = {15526, 52595, 55655}; 
+    Lecteur lecteur("59", "colin", "liaud", v);
+    lecteur.ajouteListeISBN(55555);
+    lecteur.removeListeISBN(52595);
+    lecteur.displayId();
+    lecteur.displayNom();
+    lecteur.displayPrenom();
+    lecteur.displayListeISBN(0);
+    lecteur.displayListeISBN(1);
+    lecteur.displayListeISBN(2);
+    return 0;
 }
 
 
