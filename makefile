@@ -7,7 +7,11 @@ DEPFLAGS   = -MMD
 LDFLAGS    = 
 # Replace your_files.cpp with the list of cpp files that need to be compiled
 # Ex: file1.cpp file2.cpp file3.cpp
+<<<<<<< HEAD
 SRCS       = main.cpp date.cpp lecteur.cpp livre.cpp emprun.cpp
+=======
+SRCS       = main.cpp date.cpp livre.cpp lecteur.cpp emprun.cpp
+>>>>>>> 72bd9e8350bb28f8d4c82a36a51d48e754412563
 OBJS       = $(SRCS:.cpp=.o)
 # Replace your_app with the name you want to give to your executable file
 TARGET     = test 

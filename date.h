@@ -3,7 +3,7 @@
 
 class Date {
 public:
-    Date(int month=1, int day=1, int year=2022);
+    Date(int day=1, int month=1, int year=2022);
     int month() const;
     int day() const;
     int year() const;
