@@ -1,6 +1,6 @@
 #include "lecteur.h"
 
-Lecteur::Lecteur(std::string id, std::string nom, std::string prenom, std::vector<long> listeISBN) : _id(id), _nom(nom), _prenom(prenom), _listeISBN(listeISBN){
+Lecteur::Lecteur(std::string id, std::string nom, std::string prenom, std::vector<long int> listeISBN) : _id(id), _nom(nom), _prenom(prenom), _listeISBN(listeISBN){
 
 }
 
@@ -13,7 +13,7 @@ std::string Lecteur::nom(){
 std::string Lecteur::prenom(){
     return _prenom;
 }
-std::vector<long> Lecteur::listeISBN(){
+std::vector<long int> Lecteur::listeISBN(){
     return _listeISBN;
 }
 
@@ -37,4 +37,17 @@ void Lecteur::removeListeISBN(long isbn){
         }
     }
     
+}
+
+void Lecteur::displayId(){
+    std::cout << _id << std::endl;
+}
+void Lecteur::displayNom(){
+    std::cout <<  _nom << std::endl;
+}
+void Lecteur::displayPrenom(){
+    std::cout << _prenom << std::endl;
+}
+void Lecteur::displayListeISBN(int i){
+    std::cout <<  _listeISBN[i] << std::endl;
 }
