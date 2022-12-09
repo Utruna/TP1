@@ -1,3 +1,6 @@
+#ifndef H_DATE
+#define H_DATE
+
 class Date {
 public:
     Date(int month=1, int day=1, int year=2022);
@@ -16,4 +19,4 @@ private:
 };
 
 
-
+#endif //!H_DATE
