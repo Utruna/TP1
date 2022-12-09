@@ -3,16 +3,20 @@
 
 class Lecteur {
     public:
-        Lecteur (std::string id, std::string nom, std::string prenom, std::vector<long> listeISBN);
+        Lecteur (std::string id, std::string nom, std::string prenom, std::vector<long int> listeISBN);
         std::string id();
         std::string nom();
         std::string prenom();
-        std::vector<long> listeISBN();
+        std::vector<long int> listeISBN();
         void updateId(std::string id);
         void updateNom(std::string nom);
         void updatePrenom(std::string prenom);
         void ajouteListeISBN(long isbn);
         void removeListeISBN(long isbn);
+        void displayId();
+        void displayNom();
+        void displayPrenom();
+        void displayListeISBN(int i);
     private:
         std::string _id;
         std::string _nom;
