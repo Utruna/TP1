@@ -5,10 +5,12 @@
 
 class Livre {
     public:
-        Livre(std::string title, std::string author, Date date, std::string editeur, std::string langue, std::string genre, std::string ISBN);
+        Livre(std::string title, std::string author, Date dateDePublication, std::string editeur, std::string langue, std::string genre, std::string ISBN);
         std::string title() const;
         std::string author() const;
-        Date date() const;
+        std::string editeur() const;
+        std::string langue() const;
+        Date dateDePublication() const;
         void updateTitle(std::string title);
         void updateAuthor(std::string author);
         void updateDate(Date date);
