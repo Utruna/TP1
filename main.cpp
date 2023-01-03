@@ -1,36 +1,48 @@
 #include <iostream>
 #include <string>
-#include "date.h"
-#include "livre.h"
-#include "emprun.h"
-#include "lecteur.h"
+#include "bibliotheque.h"
+
 
 int main() {
-    Date D1(1, 1, 2022);
-    Date D2(24, 12, 2022);
-    std::cout << D1.month() << "/" << D1.day() << "/" << D1.year() << std::endl;
-    
-    Livre L1("Le Petit Prince", "Antoine de Saint-Exupery", D1, "Gallimard", "Francais", "Roman", 9782070413095);
-    std::cout << "titre : " << L1.title() << ", auteur : " << L1.author() << ", editeur :"<< L1.editeur() << ", langue : " << L1.langue();
-    L1.dateDePublication();
-    std::cout << std::endl;
+
+    Date date(01,01,01);
+
+    Auteur auteur1("06521", "liaud", "colin", date);
+    Auteur auteur2("5148", "monnom", "monprenom", date);
+    Auteur auteur3("52115", "sonnom", "sonprenom", date);
+
+    Livre livre1("livre1", auteur1, date, "editeur1", "langue1", "genre1", 251896);
+    Livre livre2("livre2", auteur2, date, "editeur2", "langue2", "genre2", 55269);
+
+    Lecteur lecteur1("id1", "nom1","prenom1");
+    Lecteur lecteur2("id2", "nom2","prenom2");
+
+    Emprun emprun1(date, livre1.isbn(), lecteur1.id());
+    Emprun emprun2(date, livre2.isbn(), lecteur2.id());
+
+    Bibliotheque biblio;
+
+    biblio.ajouteAuteur(auteur1);
+    biblio.ajouteAuteur(auteur2);
+    biblio.ajouteAuteur(auteur3);
+
+    biblio.ajouteLivre(livre1);
+    biblio.ajouteLivre(livre2);
+
+    biblio.ajouteLecteur(lecteur1);
+    biblio.ajouteLecteur(lecteur2);
+
+    biblio.ajouteEmprun(emprun1);
+    biblio.ajouteEmprun(emprun2);
+
+    std::vector<Auteur> listeAuteurs = biblio.listeAuteurs();
+    std::vector<Livre> listeLivres = biblio.listeLivres();
+    std::vector<Lecteur> listeLecteurs = biblio.listeLecteurs();
+    std::vector<Emprun> listeEmprunts = biblio.listeEmpruns();
 
 
-    Emprun E1(D2, "456781", "1E4567898");
-    E1.dateEmprun();
-    std::cout << ", ID livre : " << E1.idLivre() << ", ID adherent : "<< E1.idAdherent() << std::endl;
-    E1.dateRetour();
 
-    std::vector<long int> v = {15526, 52595, 55655}; 
-    Lecteur lecteur("59", "colin", "liaud", v);
-    lecteur.ajouteListeISBN(55555);
-    lecteur.removeListeISBN(52595);
-    lecteur.displayId();
-    lecteur.displayNom();
-    lecteur.displayPrenom();
-    lecteur.displayListeISBN(0);
-    lecteur.displayListeISBN(1);
-    lecteur.displayListeISBN(2);
+
     return 0;
 }
 

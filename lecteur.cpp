@@ -1,6 +1,6 @@
 #include "lecteur.h"
 
-Lecteur::Lecteur(std::string id, std::string nom, std::string prenom, std::vector<long int> listeISBN) : _id(id), _nom(nom), _prenom(prenom), _listeISBN(listeISBN){
+Lecteur::Lecteur(std::string id, std::string nom, std::string prenom) : _id(id), _nom(nom), _prenom(prenom){
 
 }
 
@@ -50,4 +50,9 @@ void Lecteur::displayPrenom(){
 }
 void Lecteur::displayListeISBN(int i){
     std::cout <<  _listeISBN[i] << std::endl;
+}
+
+std::ostream& operator<<(std::ostream os,Lecteur lecteur){
+    os << "identifiant :" << lecteur.id() << "nom :" << lecteur.nom() << "prenom :" << lecteur.prenom() << std::endl;
+    return os;
 }

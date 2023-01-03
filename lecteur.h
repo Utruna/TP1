@@ -3,7 +3,7 @@
 
 class Lecteur {
     public:
-        Lecteur (std::string id, std::string nom, std::string prenom, std::vector<long int> listeISBN);
+        Lecteur (std::string id, std::string nom, std::string prenom);
         std::string id();
         std::string nom();
         std::string prenom();
@@ -23,3 +23,4 @@ class Lecteur {
         std::string _prenom;
         std::vector<long> _listeISBN;
 };
+std::ostream& operator<<(std::ostream os, const Lecteur& lecteur);

@@ -2,12 +2,13 @@
 #include"date.h"
 #include<iostream>
 
-Emprun::Emprun(Date dateEmprun, std::string idLivre, std::string idAdherent) :
+Emprun::Emprun(Date dateEmprun, long int idLivre, std::string idAdherent) :
 _dateEmprun(dateEmprun), _idLivre(idLivre), _idAdherent(idAdherent) {
     std::cout << "Emprun cree" << std::endl;
+    
 }
 
-std::string Emprun::idLivre() const {
+long int Emprun::idLivre() const {
     return _idLivre;
 }
 

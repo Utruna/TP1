@@ -2,8 +2,8 @@
 #include<iostream>
 #include<vector>
 
-Livre::Livre(std::string title, std::string author, Date date, std::string editeur, std::string langue, std::string genre, long int ISBN) :
-_titre(title), _auteur(author), _editeur(editeur), _langue(langue), _genre(genre), _ISBN(ISBN) {
+Livre::Livre(std::string title, Auteur author, Date date, std::string editeur, std::string langue, std::string genre, long int ISBN) :
+_titre(title), _auteur(author), _editeur(editeur), _langue(langue), _genre(genre), _ISBN(ISBN){
     std::cout << "Livre crée" << std::endl;
 }
 
@@ -11,7 +11,7 @@ std::string Livre::title() const {
     return _titre;
 }
 
-std::string Livre::author() const {
+Auteur Livre::author() const {
     return _auteur;
 }
 
@@ -32,7 +32,7 @@ void Livre::updateTitle(std::string title) {
     _titre = title;
 }
 
-void Livre::updateAuthor(std::string author) {
+void Livre::updateAuthor(Auteur author) {
     _auteur = author;
 }
 
@@ -44,3 +44,13 @@ long int Livre::isbn() const {
     return _ISBN;
 }
 
+std::string Livre::genre() const {
+    return _genre;
+}
+
+std::ostream& operator<<(std::ostream os,Livre livre){
+    Date date = livre.dateDePublication();
+    Auteur auteur = livre.author();
+    os << "titre :" << livre.title() << "nom auteur:" << auteur.nom() << "prenom auteur:" << auteur.prenom() << "date de publication :" << date.day() << date.month() << date.year() << "editeur :" << livre.editeur() << "langue :" << livre.langue() << "genre :" << livre.genre() << "ISBN :" << livre.isbn() << std::endl;
+    return os;
+}
