@@ -49,10 +49,22 @@ void Lecteur::displayPrenom(){
     std::cout << _prenom << std::endl;
 }
 void Lecteur::displayListeISBN(int i){
-    std::cout <<  _listeISBN[i] << std::endl;
+    std::cout <<  _listeISBN[i] << " " << std::endl;
 }
 
-std::ostream& operator<<(std::ostream os,Lecteur lecteur){
-    os << "identifiant :" << lecteur.id() << "nom :" << lecteur.nom() << "prenom :" << lecteur.prenom() << std::endl;
+/*
+int nbLivresEMpruntes(){
+    int nb = 0;
+    for(auto i = _listeISBN.begin(); i != _listeISBN.end(); i++){
+        nb++;
+    }
+    return nb;
+}
+*/
+
+std::ostream& operator<<(std::ostream& os,Lecteur lecteur){
+    std::vector<long> ISBN = lecteur.listeISBN();
+    os << "identifiant : " << lecteur.id() << " nom : " << lecteur.nom() << " prenom : " << lecteur.prenom() << std::endl;
+    
     return os;
 }

@@ -17,10 +17,11 @@ class Lecteur {
         void displayNom();
         void displayPrenom();
         void displayListeISBN(int i);
+        int ndLivresEmpruntes(void);
     private:
         std::string _id;
         std::string _nom;
         std::string _prenom;
         std::vector<long> _listeISBN;
 };
-std::ostream& operator<<(std::ostream os, const Lecteur& lecteur);
+std::ostream& operator<<(std::ostream& os, const Lecteur lecteur);

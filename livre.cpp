@@ -48,9 +48,9 @@ std::string Livre::genre() const {
     return _genre;
 }
 
-std::ostream& operator<<(std::ostream os,Livre livre){
+std::ostream& operator<<(std::ostream& os,Livre livre){
     Date date = livre.dateDePublication();
     Auteur auteur = livre.author();
-    os << "titre :" << livre.title() << "nom auteur:" << auteur.nom() << "prenom auteur:" << auteur.prenom() << "date de publication :" << date.day() << date.month() << date.year() << "editeur :" << livre.editeur() << "langue :" << livre.langue() << "genre :" << livre.genre() << "ISBN :" << livre.isbn() << std::endl;
+    os << "titre : " << livre.title() << " auteur: " << auteur.nom() << " prenom auteur:" << auteur.prenom() << " date de publication : " << date.day()<< " " << date.month()<< " " << date.year() << " editeur : " << livre.editeur() << " langue : " << livre.langue() << " genre : " << livre.genre() << " ISBN : " << livre.isbn() << std::endl;
     return os;
 }

@@ -29,4 +29,4 @@ class Livre {
         long int _ISBN;
         std::vector<std::string> _listeID;
 };
-std::ostream& operator<<(std::ostream os,Livre livre);
+std::ostream& operator<<(std::ostream& os,Livre livre);
