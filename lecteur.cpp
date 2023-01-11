@@ -52,15 +52,15 @@ void Lecteur::displayListeISBN(int i){
     std::cout <<  _listeISBN[i] << " " << std::endl;
 }
 
-/*
-int nbLivresEMpruntes(){
+
+int Lecteur::ndLivresEmpruntes(){
     int nb = 0;
     for(auto i = _listeISBN.begin(); i != _listeISBN.end(); i++){
         nb++;
     }
     return nb;
 }
-*/
+
 
 std::ostream& operator<<(std::ostream& os,Lecteur lecteur){
     std::vector<long> ISBN = lecteur.listeISBN();

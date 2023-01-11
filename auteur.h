@@ -15,4 +15,4 @@ class Auteur {
        std::string _prenom;
        Date _dateNaissance;
 };
-std::ostream& operator<<(std::ostream os,Auteur auteur);
+std::ostream& operator<<(std::ostream& os,Auteur auteur);

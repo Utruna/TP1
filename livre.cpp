@@ -24,8 +24,8 @@ std::string Livre::langue() const {
 }
 
 Date Livre::dateDePublication() const {
-    std::cout << ", publier le : " << _dateDePublication.month() << "/" << _dateDePublication.day() << "/" << _dateDePublication.year();
-    return 0;
+    //std::cout << ", publier le : " << _dateDePublication.month() << "/" << _dateDePublication.day() << "/" << _dateDePublication.year();
+    return _dateDePublication;
 }
 
 void Livre::updateTitle(std::string title) {
@@ -51,6 +51,6 @@ std::string Livre::genre() const {
 std::ostream& operator<<(std::ostream& os,Livre livre){
     Date date = livre.dateDePublication();
     Auteur auteur = livre.author();
-    os << "titre : " << livre.title() << " auteur: " << auteur.nom() << " prenom auteur:" << auteur.prenom() << " date de publication : " << date.day()<< " " << date.month()<< " " << date.year() << " editeur : " << livre.editeur() << " langue : " << livre.langue() << " genre : " << livre.genre() << " ISBN : " << livre.isbn() << std::endl;
+    os << "titre : " << livre.title() << " auteur : " << auteur.nom() << " prenom auteur :" << auteur.prenom() << " date de publication : " << date.day()<< " " << date.month()<< " " << date.year() << " editeur : " << livre.editeur() << " langue : " << livre.langue() << " genre : " << livre.genre() << " ISBN : " << livre.isbn() << std::endl;
     return os;
 }

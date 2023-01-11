@@ -16,8 +16,8 @@ Date Auteur::dateNaissance(){
     return _dateNaissance;
 }
 
-std::ostream& operator<<(std::ostream os,Auteur auteur){
+std::ostream& operator<<(std::ostream& os,Auteur auteur){
     Date date = auteur.dateNaissance();
-    os << "identifiant :" << auteur.idAuteur() << "nom :" << auteur.nom() << "prenom :" << auteur.prenom() << "date de naissance :" << date.day() << date.month() << date.year() << std::endl;
+    os << "identifiant : " << auteur.idAuteur() << " nom : " << auteur.nom() << " prenom : " << auteur.prenom() << " date de naissance : " << date.day() << date.month() << date.year() << std::endl;
     return os;
 }

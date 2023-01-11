@@ -17,7 +17,7 @@ std::string Emprun::idAdherent() const {
 }
 
 Date Emprun::dateEmprun() const {
-    std::cout << "Emprunter le " << _dateEmprun.month() << "/" << _dateEmprun.day() << "/" << _dateEmprun.year();
+    std::cout << "Emprunte le " << _dateEmprun.month() << "/" << _dateEmprun.day() << "/" << _dateEmprun.year();
     return 0;
 }
 

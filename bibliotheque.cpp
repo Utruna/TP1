@@ -66,8 +66,8 @@ bool Bibliotheque::isDispo(long int isbn){
     return dispo;
 }
 
-/*
-void affichLivresAuteurs(Auteur auteur){
+
+void Bibliotheque::affichLivresAuteurs(Auteur auteur){
     for(auto i = _listeLivres.begin(); i != _listeLivres.end(); i++){
         Livre livre = *i;
         Auteur auteur2 = livre.author();
@@ -77,41 +77,63 @@ void affichLivresAuteurs(Auteur auteur){
     }
 }
 
-void affichEmpruns(){
-    int j, l = 0;
+void Bibliotheque::affichEmpruns(){
+    float j = 0, l = 0;
      for(auto i = _listeEmpruns.begin() ; i != _listeEmpruns.end(); i++){
         Emprun emprun = *i;
         Date dateEmprun = emprun.dateEmprun();
+        std::cout << "\n";
         Date dateRetour = emprun.dateRetour();
-        std::cout << "Date d'emprun : " << dateEmprun.day() << dateEmprun.month()<< dateEmprun.year() << std::endl;
-        std::cout << "Date de retour : " << dateRetour.day() << dateRetour.month()<< dateRetour.year() << std::endl;
-        std::cout << "id Adhérent : " << emprun.idAdherent() << std::endl;
+        std::cout << "\n";
+        std::cout << "id Adherent : " << emprun.idAdherent() << std::endl;
         std::cout << "id Livre : " << emprun.idLivre() << std::endl;
+        std::cout << "\n" << std::endl;
         j++;
     }
 
     for(auto i = _listeLivres.begin(); i != _listeLivres.end(); i++){
         l++;
     }
-
-    std::cout << "pourcentage de livre empruntés : " << j/l*100 << "%" << std::endl;
+    std::cout << "livres empruntes : " << j << std::endl;
+    std::cout << "nombre livres : " << l << std::endl;
+    double percent = 0.00;
+    percent = j/l*100;
+    std::cout << "pourcentage de livre empruntes : " << percent << "%" << std::endl;
 
 }
 
-void affichLivresLecteur(Lecteur lecteur){
+void Bibliotheque::affichLivresLecteur(Lecteur lecteur){
     std::vector<long int> listeISBN = lecteur.listeISBN();
-    for(auto i = listeISBN.begin(); i != listeISBN.begin(); i++){
+    for(auto i = listeISBN.begin(); i != listeISBN.end(); i++){
+        long int isbn = *i;
         for (auto j = _listeLivres.begin(); j != _listeLivres.end(); j++){
-            if(*i == *j.isbn()){
-                std::cout << *j << std::endl;
+            Livre livre = *j;
+            if(isbn == livre.isbn()){
+                std::cout << livre << std::endl;
             }
         }
     }
 }
 
-void affichClassementLecteurs(){
-    for(auto i = _listeLecteurs.begin(); i != _listeLecteurs.end(); i++){
-    
+void Bibliotheque::affichClassementLecteurs(){
+    std::vector<Lecteur> listeTri = _listeLecteurs;
+    bool tri = false;
+    int j = 0, l = 0;
+    do{
+        tri = true;
+        for(auto i = _listeLecteurs.begin(); i != _listeLecteurs.end(); i++){
+            if(listeTri[j].ndLivresEmpruntes() < listeTri[j+1].ndLivresEmpruntes()){
+                Lecteur lecteur = listeTri[j];
+                listeTri[j] = listeTri[j+1];
+                listeTri[j+1] = lecteur;
+                tri = false;
+            }
+            j++;
+        }
+    }while(!tri);
+    for(auto i = listeTri.begin(); i != listeTri.end(); i++){
+        std::cout << l+1 << " : ";
+        std::cout << listeTri[l] << std::endl;  
+        l++;   
     }
 }
-*/
